@@ -6,13 +6,13 @@ A simple and flexible error handler for Axios requests, allowing customizable er
 
 To install `axios-error-handler-ts`, you can use npm or yarn:
 
-### Using npm:
+### Using npm
 
 ```bash
 npm install axios-error-handler-ts
 ```
 
-### Using yarn:
+### Using yarn
 
 ```bash
 yarn add axios-error-handler-ts
@@ -57,8 +57,9 @@ import { handleError } from "axios-error-handler-ts";
 
 // Example function
 handleError(error, "You are not allowed to access this resource.");
+// If AxiosError and status === 401: 'You are not allowed to access this resource.'
 // If AxiosError and status === 403: 'You are not allowed to access this resource.'
-// If AxiosError and status === 500: 'You are not allowed to access this resource.'
+// If AxiosError and status === 500: 'A server error occurred. Please try again later.'
 ```
 
 ### Server Error Handling
