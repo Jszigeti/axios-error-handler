@@ -1,0 +1,25 @@
+{
+  "name": "axios-error-handler",
+  "version": "1.0.0",
+  "description": "A simple helper to handle errors in Axios requests with customizable messages.",
+  "main": "src/errorHandler.ts",
+  "types": "src/errorHandler.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "axios",
+    "error",
+    "handler",
+    "helper",
+    "typescript"
+  ],
+  "author": "Jonas Szigeti",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
