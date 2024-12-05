@@ -1,6 +1,6 @@
 {
   "name": "axios-error-handler-ts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple helper to handle errors in Axios requests with customizable messages.",
   "main": "src/errorHandler.ts",
   "types": "src/errorHandler.ts",
