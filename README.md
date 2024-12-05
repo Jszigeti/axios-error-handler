@@ -4,32 +4,32 @@ A simple and flexible error handler for Axios requests, allowing customizable er
 
 ## Installation
 
-To install `axios-error-handler`, you can use npm or yarn:
+To install `axios-error-handler-ts`, you can use npm or yarn:
 
 ### Using npm:
 
 ```bash
-npm install axios-error-handler
+npm install axios-error-handler-ts
 ```
 
 ### Using yarn:
 
 ```bash
-yarn add axios-error-handler
+yarn add axios-error-handler-ts
 ```
 
 ## Usage
 
-You can use `axios-error-handler` to handle errors in your Axios requests by customizing error messages based on HTTP status codes.
+You can use `axios-error-handler-ts` to handle errors in your Axios requests by customizing error messages based on HTTP status codes.
 
 ### Basic Usage (Single Status Code)
 
 ```typescript
-import { handleError } from "axios-error-handler";
+import { handleError } from "axios-error-handler-ts";
 
 // Example function
 handleError(error, 403, "Email or password incorrect.");
-// if AxiosError and status === 403: "Email or password incorrect."
+// If AxiosError and status === 403: 'Email or password incorrect.'
 ```
 
 ### Advanced Usage (Multiple Status Codes)
@@ -37,15 +37,28 @@ handleError(error, 403, "Email or password incorrect.");
 You can also provide custom error messages for multiple HTTP status codes:
 
 ```typescript
-import { handleError } from "axios-error-handler";
+import { handleError } from "axios-error-handler-ts";
 
 // Example function
-handleError(error, [403, 404], {
+handleError(error, {
   403: "You are not allowed to access this resource.",
   404: "Group is not found.",
 });
-// if AxiosError and status === 403: "You are not allowed to access this resource."
-// if AxiosError and status === 404: "Group is not found."
+// If AxiosError and status === 403: 'You are not allowed to access this resource.'
+// If AxiosError and status === 404: 'Group is not found.'
+```
+
+### Global Usage (Only Message Provided)
+
+You can only provide a string and if the error is AxiosInstance and not related to a server one, the handler will return the global message.
+
+```typescript
+import { handleError } from "axios-error-handler-ts";
+
+// Example function
+handleError(error, "You are not allowed to access this resource.");
+// If AxiosError and status === 403: 'You are not allowed to access this resource.'
+// If AxiosError and status === 500: 'You are not allowed to access this resource.'
 ```
 
 ### Server Error Handling
@@ -53,11 +66,11 @@ handleError(error, [403, 404], {
 If the error status doesn't match any of the provided codes and is related to a server error (status 500+), the handler will return a default server error message.
 
 ```typescript
-import { handleError } from "axios-error-handler";
+import { handleError } from "axios-error-handler-ts";
 
 // Example function
 handleError(error, 403, "Email or password incorrect.");
-// If AxiosError and status === 500: "A server error occurred. Please try again later."
+// If AxiosError and status === 500: 'A server error occurred. Please try again later.'
 ```
 
 ### Default Error Handling
@@ -65,38 +78,48 @@ handleError(error, 403, "Email or password incorrect.");
 If the error status doesn't match any of the provided codes, the handler will return a default error message.
 
 ```typescript
-import { handleError } from "axios-error-handler";
+import { handleError } from "axios-error-handler-ts";
 
 // Example function
 handleError(error, 403, "Email or password incorrect.");
-// If AxiosError and status !== 403 | status > 500: "An unknown error occurred."
-// If Error : error.message
+// If AxiosError and status !== 403 | status > 500: 'An unknown error occurred.'
+// If generic Error : error.message
 // If unknown error : 'An unknown error occurred.'
 ```
 
 ### Options
 
-#### `errorCodesToCheck` (required)
-
-- **Type**: `number | number[]`
-- **Description**: The status code(s) to check for in the Axios error response. You can pass a single status code or an array of status codes.
-
 #### `errorMessages` (required)
 
 - **Type**: `string | Record<number, string>`
-- **Description**: The custom error message(s) for the specified status code(s). If you pass a single string, it will be used for all errors.
+- **Description**: The custom error message(s) for the specified status code(s). If you pass a single string, it will be used for all errors. If passing a `Record<number, string>`, the object keys represent status codes, and values represent corresponding error messages.
 
-If passing a `Record<number, string>`, the object keys represent status codes and values represent corresponding error messages.
+If passing a `Record<number, string>`, must not fill `errorCodesToCheck`, the object keys represent status codes and values represent corresponding error messages.
+
+#### `errorCodeToCheck` (optional)
+
+- **Type**: `number`
+- **Description**: The specific status code to check for in the Axios error response. Must be specified if `errorMessages` is a string.
+
+#### `serverErrorMessage` (optional)
+
+- **Type**: `string`
+- **Description**: The message to show for server errors (status codes >= 500). Default is 'A server error occurred. Please try again later.'
+
+#### `unknownErrorMessage` (optional)
+
+- **Type**: `string`
+- **Description**: The message to show when the error type is unknown. Default is 'An unknown error occurred.'
 
 ## Example
 
 ```typescript
-import { handleError } from "axios-error-handler";
+import { handleError } from "axios-error-handler-ts";
 
 try {
   // Axios request here
 } catch (error: unknown) {
-  const errorMessage = handleError(error, [403, 404], {
+  const errorMessage = handleError(error, {
     403: "You are not authorized to access this resource.",
     404: "Requested resource not found.",
   });
