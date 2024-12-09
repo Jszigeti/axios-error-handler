@@ -1,5 +1,7 @@
 # axios-error-handler
 
+[![npm version](https://badge.fury.io/js/axios-error-handler-ts.svg)](https://badge.fury.io/js/axios-error-handler-ts)
+
 A simple and flexible error handler for Axios requests, allowing customizable error messages based on HTTP status codes. It helps manage API error responses by providing clear and customized messages depending on the status code returned by the server.
 
 ## Installation
