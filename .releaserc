@@ -8,12 +8,6 @@
     "@semantic-release/changelog",
     "@semantic-release/git",
     "@semantic-release/github",
-    {
-      "@semantic-release/npm": {
-        "npmPublish": true,
-        "pkgRoot": "dist",
-        "version": "1.2.1"
-      }
-    }
+    "@semantic-release/npm"
   ]
 }
