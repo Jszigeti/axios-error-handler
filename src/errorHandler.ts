@@ -26,14 +26,14 @@ export const handleError = (
     const codesToCheck: number[] = errorCodeToCheck
       ? [errorCodeToCheck]
       : Object.keys(errorMessages).map(Number);
-    if (codesToCheck.includes(error.response.status)) {
+    if (codesToCheck.includes(error.response.status))
       if (
         typeof errorMessages === "object" &&
         errorMessages[error.response.status]
       )
         return errorMessages[error.response.status];
       else if (typeof errorMessages === "string") return errorMessages;
-    } else if (error.response.status >= 500) return serverErrorMessage;
+    if (error.response.status >= 500) return serverErrorMessage;
     return unknownErrorMessage;
   } else if (error instanceof Error) return error.message;
   return unknownErrorMessage;
