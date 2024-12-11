@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "lib": ["es2016", "dom"],
-    "module": "commonjs",
+    "target": "es2022",
+    "lib": ["es2022", "dom"],
+    "module": "ESNext",
     "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,

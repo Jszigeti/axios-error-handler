@@ -51,7 +51,7 @@ describe("handleError utility function", () => {
     });
 
     it("returns default unknown error message for unknown error", () => {
-      const error = {} as any;
+      const error = {};
       const result = handleError(error, "Custom error message");
       expect(result).toBe("An unknown error occurred.");
     });
@@ -83,7 +83,7 @@ describe("handleError utility function", () => {
     });
 
     it("returns default unknown error message for unknown error", () => {
-      const error = {} as any;
+      const error = {};
       const result = handleError(error, "Custom error message", 400);
       expect(result).toBe("An unknown error occurred.");
     });
@@ -115,7 +115,7 @@ describe("handleError utility function", () => {
     });
 
     it("returns default unknown error message for unknown error", () => {
-      const error = {} as any;
+      const error = {};
       const result = handleError(error, errorMessages);
       expect(result).toBe("An unknown error occurred.");
     });
@@ -156,7 +156,7 @@ describe("handleError utility function", () => {
     });
 
     it("returns default unknown error message for unknown error", () => {
-      const error = {} as any;
+      const error = {};
       const result = handleError(
         error,
         "Custom error message",
@@ -193,7 +193,7 @@ describe("handleError utility function", () => {
     });
 
     it("returns custom unknown error message for unknown error", () => {
-      const error = {} as any;
+      const error = {};
       const result = handleError(
         error,
         "Custom error message",
