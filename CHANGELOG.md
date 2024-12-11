@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Jszigeti/axios-error-handler/compare/v1.2.0...v1.3.0) (2024-12-11)
+
+
+### Features
+
+* add tests, update README, set up GitHub Actions, and fix code ([91428c0](https://github.com/Jszigeti/axios-error-handler/commit/91428c0451459f18732eb45f45cdd19c517fa599))
+
 # [1.2.0](https://github.com/Jszigeti/axios-error-handler/compare/v1.1.0...v1.2.0) (2024-12-11)
 
 
