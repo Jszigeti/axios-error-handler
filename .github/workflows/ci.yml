@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18, 20, 22] # Tester sur différentes versions de Node.js
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 # Récupère ton code source
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }} # Utilise les versions de Node.js définies dans la stratégie
+      - name: Install dependencies
+        run: npm install # Installe les dépendances de ton projet
+      - name: Run tests
+        run: npm test # Exécute tes tests avec la commande npm test
+
+  release:
+    if: github.ref == 'refs/heads/main' # Lancer cette étape uniquement si on pousse sur la branche 'main'
+    runs-on: ubuntu-latest
+    needs: [test] # Lancer après le job de test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm install
+      - name: Build the package
+        run: npm run build # Si tu as une commande de build, sinon enlève cette étape
+      - name: Publish to npm
+        run: npm publish --access public # Publie ton package sur npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Utilise un token npm secret pour l'authentification
