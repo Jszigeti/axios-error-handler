@@ -10,7 +10,8 @@
     {
       "@semantic-release/npm": {
         "npmPublish": true,
-        "pkgRoot": "dist"
+        "pkgRoot": "dist",
+        "version": "1.2.1"
       }
     }
   ]

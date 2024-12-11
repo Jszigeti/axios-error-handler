@@ -148,6 +148,14 @@ cd axios-error-handler
 npm install
 ```
 
+### Running Tests
+
+The project uses Jest for testing. To run the tests, use the following command:
+
+```bash
+npm test
+```
+
 ### Building
 
 To compile the TypeScript code into JavaScript, run:
@@ -156,7 +164,7 @@ To compile the TypeScript code into JavaScript, run:
 npm run build
 ```
 
-This will generate the compiled code in the `dist` directory.
+This will generate the compiled code in the `dist` directory. The compiled files are then published to npm instead of the TypeScript source files.
 
 ## License
 
