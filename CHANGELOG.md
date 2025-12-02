@@ -1,34 +1,68 @@
-# [1.3.0](https://github.com/Jszigeti/axios-error-handler/compare/v1.2.0...v1.3.0) (2024-12-11)
+# Changelog
 
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+
+- Prettier 3.7.3 for code formatting
+- Husky 9.1.7 + lint-staged 16.2.7 for pre-commit hooks
+- GitHub Actions v6 (checkout, setup-node)
+- Publish workflow for GitHub Release-based npm publishing
+- Issue and PR templates
+- Dependabot configuration
+- CONTRIBUTING.md guide
+- Comprehensive README badges (CI, npm downloads, license)
+
+### Changed
+
+- Upgraded all dependencies to latest versions
+- Migrated to semantic-release 25.0.2
+- Simplified CI workflow (removed matrix, added format check)
+- Formatted all code with Prettier
+- Improved package.json with format script, engines, and lint-staged config
+
+### Fixed
+
+- Fixed 15 security vulnerabilities by upgrading dependencies
+
+## [1.3.0] - 2024-12-11
 
 ### Features
 
-* add tests, update README, set up GitHub Actions, and fix code ([91428c0](https://github.com/Jszigeti/axios-error-handler/commit/91428c0451459f18732eb45f45cdd19c517fa599))
+- add tests, update README, set up GitHub Actions, and fix code
 
-# [1.2.0](https://github.com/Jszigeti/axios-error-handler/compare/v1.1.0...v1.2.0) (2024-12-11)
-
-
-### Features
-
-* add tests, update README, set up GitHub Actions, and fix code ([b18c7db](https://github.com/Jszigeti/axios-error-handler/commit/b18c7db40ba9933d2c1e8fa5517917218b2dc540))
-
-# [1.1.0](https://github.com/Jszigeti/axios-error-handler/compare/v1.0.1...v1.1.0) (2024-12-11)
-
+## [1.2.0] - 2024-12-11
 
 ### Features
 
-* add tests, update README, set up GitHub Actions, and fix code ([db7f897](https://github.com/Jszigeti/axios-error-handler/commit/db7f897891ab4a19d3ee0792aeba24b6902999ea))
+- add tests, update README, set up GitHub Actions, and fix code
 
-## [1.0.1](https://github.com/Jszigeti/axios-error-handler/compare/v1.0.0...v1.0.1) (2024-12-11)
+## [1.1.0] - 2024-12-11
 
+### Features
+
+- add tests, update README, set up GitHub Actions, and fix code
+
+## [1.0.1] - 2024-12-11
 
 ### Bug Fixes
 
-* update semantic-release configuration ([22cbf59](https://github.com/Jszigeti/axios-error-handler/commit/22cbf5991874ba9ed6631e2fa6e24545a22e6f68))
+- update semantic-release configuration
 
-# 1.0.0 (2024-12-11)
-
+## [1.0.0] - 2024-12-11
 
 ### Bug Fixes
 
-* update semantic-release configuration ([7b63e30](https://github.com/Jszigeti/axios-error-handler/commit/7b63e30a2585995d08c0d59ae942efd99958d547))
+- update semantic-release configuration
+
+[unreleased]: https://github.com/Jszigeti/axios-error-handler/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/Jszigeti/axios-error-handler/compare/v1.2.0...v1.3.0
+[1.2.0]: https://github.com/Jszigeti/axios-error-handler/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/Jszigeti/axios-error-handler/compare/v1.0.1...v1.1.0
+[1.0.1]: https://github.com/Jszigeti/axios-error-handler/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/Jszigeti/axios-error-handler/releases/tag/v1.0.0

@@ -1,4 +1,4 @@
-import { AxiosError } from "axios";
+import { AxiosError } from 'axios';
 
 /**
  * Handles errors by checking the error type and status code.
@@ -13,12 +13,12 @@ export const handleError = (
   error: unknown,
   errorMessages: string | Record<number, string>,
   errorCodeToCheck?: number,
-  serverErrorMessage: string = "A server error occurred. Please try again later.",
-  unknownErrorMessage: string = "An unknown error occurred."
+  serverErrorMessage: string = 'A server error occurred. Please try again later.',
+  unknownErrorMessage: string = 'An unknown error occurred.',
 ): string => {
   if (error instanceof AxiosError && error.response) {
     if (
-      typeof errorMessages === "string" &&
+      typeof errorMessages === 'string' &&
       !errorCodeToCheck &&
       error.response.status < 500
     )
@@ -28,11 +28,11 @@ export const handleError = (
       : Object.keys(errorMessages).map(Number);
     if (codesToCheck.includes(error.response.status))
       if (
-        typeof errorMessages === "object" &&
+        typeof errorMessages === 'object' &&
         errorMessages[error.response.status]
       )
         return errorMessages[error.response.status];
-      else if (typeof errorMessages === "string") return errorMessages;
+      else if (typeof errorMessages === 'string') return errorMessages;
     if (error.response.status >= 500) return serverErrorMessage;
     return unknownErrorMessage;
   } else if (error instanceof Error) return error.message;
