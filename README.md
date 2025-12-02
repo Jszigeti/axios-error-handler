@@ -6,9 +6,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A simple and flexible error handler for Axios requests, allowing customizable error messages based on HTTP status codes. It helps manage API error responses by providing clear and customized messages depending on the status code returned by the server.
-[![npm version](https://badge.fury.io/js/axios-error-handler-ts.svg)](https://badge.fury.io/js/axios-error-handler-ts)
-
-A simple and flexible error handler for Axios requests, allowing customizable error messages based on HTTP status codes. It helps manage API error responses by providing clear and customized messages depending on the status code returned by the server.
 
 ## Installation
 
@@ -101,9 +98,7 @@ handleError(error, 403, 'Email or password incorrect.');
 #### `errorMessages` (required)
 
 - **Type**: `string | Record<number, string>`
-- **Description**: The custom error message(s) for the specified status code(s). If you pass a single string, it will be used for all errors. If passing a `Record<number, string>`, the object keys represent status codes, and values represent corresponding error messages.
-
-If passing a `Record<number, string>`, must not fill `errorCodesToCheck`, the object keys represent status codes and values represent corresponding error messages.
+- **Description**: The custom error message(s) for the specified status code(s). If you pass a single string, it will be used for all errors. If passing a `Record<number, string>`, the object keys represent status codes, and values represent corresponding error messages. If passing a `Record<number, string>`, must not fill `errorCodesToCheck`, the object keys represent status codes and values represent corresponding error messages.
 
 #### `errorCodeToCheck` (optional)
 
@@ -144,33 +139,9 @@ try {
 }
 ```
 
-## Development
+## Contributing
 
-To contribute to the project, clone the repository and install dependencies:
-
-```bash
-git clone https://github.com/Jszigeti/axios-error-handler.git
-cd axios-error-handler
-npm install
-```
-
-### Running Tests
-
-The project uses Jest for testing. To run the tests, use the following command:
-
-```bash
-npm test
-```
-
-### Building
-
-To compile the TypeScript code into JavaScript, run:
-
-```bash
-npm run build
-```
-
-This will generate the compiled code in the `dist` directory. The compiled files are then published to npm instead of the TypeScript source files.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines.
 
 ## License
 
