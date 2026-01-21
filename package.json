@@ -12,7 +12,7 @@
     "build": "tsc",
     "lint": "eslint .",
     "test": "jest",
-    "prepare": "husky",
+    "prepare": "echo \"Husky is managed automatically\"",
     "format": "prettier --write ."
   },
   "keywords": [
@@ -34,7 +34,6 @@
     "globals": "^17.0.0",
     "husky": "^9.1.7",
     "jest": "^30.2.0",
-    "lint-staged": "^16.2.7",
     "prettier": "^3.7.3",
     "ts-jest": "^29.4.6",
     "typescript": "^5.7.3",
